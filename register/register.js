@@ -1,6 +1,6 @@
 function register() {
-    let username = $('#username').val();
     let fullname = $('#fullname').val();
+    let username = $('#username').val();
     let password = $('#register-password').val();
     let email = $('#email').val();
     let phonenumber = $('#phonenumber').val();
@@ -11,7 +11,7 @@ function register() {
         password: password,
         email:email,
         phoneNumber: phonenumber,
-        role: role,
+        role: role
     }
     $.ajax({
         type: 'POST',
@@ -28,6 +28,11 @@ function register() {
             $("#register-success").html(inner);
         },
     })
+    $('#fullname').val(null);
+    $('#username').val(null);
+    $('#register-password').val(null);
+    $('#email').val(null);
+    $('#phonenumber').val(null);
 }
 function checkUserName(){
     let username = $("#username").val();

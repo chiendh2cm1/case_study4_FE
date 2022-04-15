@@ -29,5 +29,5 @@ function login() {
 
 function doLogout(){
     localStorage.clear();
-    location.href = "/case4_FE/index-1.html";
+    location.href = "/case4_FE/indexmau.html";
 }

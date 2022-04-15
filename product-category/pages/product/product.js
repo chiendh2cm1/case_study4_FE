@@ -1,11 +1,12 @@
 let currentUser = localStorage.getItem('currentUser');
 currentUser = JSON.parse(currentUser);
 
-function showNameUser(){
+function showNameUser() {
     let nameUser = "";
     nameUser = `<p class="d-block" href="#" style="color: white">Chào ${currentUser.username}</p>`
     $('#name-admin').html(nameUser);
 }
+
 $(document).ready(function () {
     showNameUser();
 })
@@ -240,7 +241,7 @@ function showEditProduct(id) {
                     for (let i = 0; i < categories.length; i++) {
                         if (categories[i].id === product.category.id) {
                             content += `<option value="${categories[i].id}" selected>${categories[i].name}</option>`
-                        }else {
+                        } else {
                             content += `<option value="${categories[i].id}">${categories[i].name}</option>`
                         }
                     }
@@ -252,6 +253,7 @@ function showEditProduct(id) {
             $('#description').val(product.description);
             let image = `<img src="http://localhost:8080/image/${product.image}" height="50" alt="image">`
             $('#image_product').html(image);
+            $('#image').val(product.image);
         }
     })
 }
